@@ -1,0 +1,3 @@
+corepack enable
+
+yarn install

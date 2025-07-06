@@ -11,6 +11,7 @@
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio"
   },
+  "packageManager": "yarn@3.9.0",
   "dependencies": {
     "@auth/drizzle-adapter": "^1.10.0",
     "@emotion/cache": "^11.14.0",

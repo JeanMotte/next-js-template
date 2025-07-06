@@ -1,8 +1,8 @@
 {
-  "name": "Next.js Template",
+  "name": "Next js Template",
   "dockerComposeFile": "docker-compose.yml",
   "service": "next-app",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/app/workspace",
   "remoteUser": "node",
   "customizations": {
     "vscode": {
@@ -65,7 +65,10 @@
       }
     }
   },
-  "postCreateCommand": "/bin/bash /app/.devcontainer/init.sh",
-	"forwardPorts": [3000, 5432, 8080],
-	"shutdownAction": "stopCompose"
+  "postCreateCommand": "/bin/bash /app/workspace/.devcontainer/init.sh",
+  "forwardPorts": [
+    3000,
+    9229
+  ],
+  "shutdownAction": "stopCompose"
 }

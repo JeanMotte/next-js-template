@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  next-app:
+    container_name: next-app
+    env_file:
+      - devcontainer.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - next-js-network
+
+    volumes:
+      - ..:/app/workspace
+      - ~/.config/gcloud/application_default_credentials.json:/secrets/gcloud/credentials.json
+      - node_modules:/app/workspace/node_modules
+
+  networks:
+    next-js-network:
+      name: next-js-network
+      driver: bridge
