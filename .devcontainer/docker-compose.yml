@@ -13,8 +13,3 @@ services:
       - ..:/app/workspace
       - ~/.config/gcloud/application_default_credentials.json:/secrets/gcloud/credentials.json
       - node_modules:/app/workspace/node_modules
-
-  networks:
-    next-js-network:
-      name: next-js-network
-      driver: bridge
