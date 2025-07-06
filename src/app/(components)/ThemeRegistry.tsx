@@ -1,6 +1,6 @@
 "use client";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,7 +8,7 @@ import { NextAppDirEmotionCacheProvider } from "./NextAppDirEmotionCacheProvider
 
 const theme = createTheme({
 	palette: {
-		mode: "dark", // or 'light'
+		mode: "light", // or 'dark'
 	},
 });
 
@@ -32,7 +32,7 @@ export default function ThemeRegistry({
 					pauseOnFocusLoss
 					draggable
 					pauseOnHover
-					theme="dark"
+					theme="light"
 				/>
 			</ThemeProvider>
 		</NextAppDirEmotionCacheProvider>
