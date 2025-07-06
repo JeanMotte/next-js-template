@@ -7,20 +7,15 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      # Mount the entire project directory into the container
-      # This allows for hot-reloading on code changes
       - .:/app
-      # Don't mount node_modules, use the one in the container
-      - /app/node_modules
     env_file:
       - .env
-    # Wait for the database to be ready before starting
     depends_on:
       postgres:
         condition: service_healthy
     networks:
       - my-app-network
-    # Keep the container running in dev mode
+    # This command now runs against your local files mounted into the container.
     command: yarn dev
 
   postgres:
@@ -52,7 +47,7 @@ services:
     environment:
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN_USER}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-    command: start-dev # Use --import-realm if you have a realm JSON file
+    command: start-dev
     networks:
       - my-app-network
 
