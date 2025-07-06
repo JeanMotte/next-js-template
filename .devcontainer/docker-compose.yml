@@ -8,8 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    networks:
-      - next-js-network
 
     volumes:
       - ..:/app/workspace
