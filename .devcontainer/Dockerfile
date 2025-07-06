@@ -20,9 +20,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 WORKDIR $WORKSPACE
 
 # Switch to the node user
-USER node
-
 RUN corepack enable
+
+USER node
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN npm install -g <your-package-here>
