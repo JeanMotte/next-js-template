@@ -1,8 +1,7 @@
-version: '3.8'
+version: "3.8"
 
 services:
   next-app:
-    container_name: next-app
     env_file:
       - devcontainer.env
     build:
@@ -14,5 +13,23 @@ services:
       - ~/.config/gcloud/application_default_credentials.json:/secrets/gcloud/credentials.json
       - node_modules:/app/workspace/node_modules
 
+    networks:
+      devnet: {}
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+    ports:
+      - 5432:5432
+    networks:
+      devnet: {}
+
 volumes:
   node_modules:
+
+networks:
+  devnet:
