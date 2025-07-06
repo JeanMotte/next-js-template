@@ -1,8 +1,7 @@
-// src/app/(components)/ThemeRegistry.tsx
 "use client";
-import * as React from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import * as React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { NextAppDirEmotionCacheProvider } from "./NextAppDirEmotionCacheProvider";
@@ -13,7 +12,11 @@ const theme = createTheme({
 	},
 });
 
-export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
+export default function ThemeRegistry({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<NextAppDirEmotionCacheProvider options={{ key: "mui" }}>
 			<ThemeProvider theme={theme}>

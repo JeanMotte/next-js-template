@@ -1,7 +1,7 @@
 // src/app/page.tsx
 import { Button } from "@mui/material";
+import ExampleForm from "./(components)/ExampleForm";
 import { auth, signIn, signOut } from "./auth";
-import ExampleForm from "./(component)/ExampleForm";
 
 function SignIn() {
 	return (
@@ -26,9 +26,7 @@ function SignOut({ name }: { name?: string | null }) {
 				await signOut();
 			}}
 		>
-			<div style={{ marginBottom: "1rem" }}>
-				Hello, {name || "User"}!
-			</div>
+			<div style={{ marginBottom: "1rem" }}>Hello, {name || "User"}!</div>
 			<Button type="submit" variant="outlined">
 				Sign Out
 			</Button>
